@@ -17,32 +17,54 @@ public class isSubString {
      * subsequence of "abcde" while "aec" is not).
      */
     public static boolean isSubsequence(String s, String t) {
+        if (s.isEmpty()) {
+            return true;
+        }
         char[] a = s.toCharArray();
         char[] b = t.toCharArray();
         int aL = a.length;
         int bL = b.length;
-        boolean contains = false;
-        int[] arr = new int[bL];
-        int counter = 0;
-        if(aL == 0)
-        {
-            return true;
-        }
+        int index = -1;
+        boolean match = false;
         for (int i = 0; i < aL; i++) {
-            contains = false;
-            char here = a[i];
+            match = false;
             for (int j = i; j < bL; j++) {
-                if (here == b[j]) {
-                    contains = true;
-                    arr[counter] = j;
-                    counter++;
+                if (a[i] == b[j] && j > index) {
+                    index = j;
+                    match = true;
+                    break;
                 }
             }
-            if (contains == false) {
-                return false;
+            if (match == false) {
+                return match;
             }
         }
-        return contains;
+        return match;
     }
-
 }
+
+/*
+ * boolean contains = false;
+ * int[] arr = new int[bL];
+ * int counter = 0;
+ * if(aL == 0)
+ * {
+ * return true;
+ * }
+ * for (int i = 0; i < aL; i++) {
+ * contains = false;
+ * char here = a[i];
+ * for (int j = i; j < bL; j++) {
+ * if (here == b[j]) {
+ * contains = true;
+ * arr[counter] = j;
+ * counter++;
+ * }
+ * }
+ * if (contains == false) {
+ * return false;
+ * }
+ * }
+ * return contains;
+ * 
+ */
