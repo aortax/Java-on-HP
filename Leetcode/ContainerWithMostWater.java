@@ -27,32 +27,22 @@ public class ContainerWithMostWater {
      */
     public static int maxArea(int[] height) {
         int areaMax = 0;
-        int left = 0;
-        int right = height.length-1;
-        while(right > left)
+        int i = 0;
+        int j  = height.length - 1;
+        while(i < j)
         {
-            int l = right - left;
-            int h = Math.min(height[left],height[right]);
-            int area = l * h;
-            areaMax = Math.max(area, areaMax);
-            // If the height on the left is greater than the one on the right we will move the right pointer to the left because we want a greater height on the right. 
-            if(height[left] >= height[right])
+            int l = j - i;
+            int h = height[i] < height[j] ? height[i] : height[j];
+            areaMax = areaMax < (l * h) ? (l * h) : areaMax;
+            if(height[i] <= height[j])
             {
-                right--;
+                i++;
             }
             else
             {
-                left++;
+                j--;
             }
         }
         return areaMax;
     }
 }
-
-/*
- *         for (int i = 0; i < height.length - 1; i++) {
-            for (int j = 1; j < height.length; j++) {
-            }
-        }
-
- */
