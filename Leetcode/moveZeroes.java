@@ -1,12 +1,16 @@
 public class moveZeroes {
-    /*
-     * 283. Move Zeroes
-    Easy
-    12.5K
-    317
-    Companies
-    
-    Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
+    public static void main(String[] args) {
+        int[] nums = { 0, 1, 0, 3, 12 };
+        int[] nums2 = { 0 };
+        int[] nums3 = { 0, 1, 2, 3, 4 };
+        moveZeroes(nums);
+        System.out.println();
+        moveZeroes(nums2);
+        System.out.println();
+        moveZeroes(nums3);
+    }
+
+    /*Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
     
     Note that you must do this in-place without making a copy of the array.
     
@@ -21,14 +25,11 @@ public class moveZeroes {
     Output: [0]
     
     Constraints:
-    
     1 <= nums.length <= 104
     -231 <= nums[i] <= 231 - 1
-    
-    
     Follow up: Could you minimize the total number of operations done?
      */
-    public void moveZeroes(int[] nums) {
+    public static void moveZeroes(int[] nums) {
         int length = nums.length; // Length of the array
         int numberOfZeros = 0; // Number of zeros we have
         int index = 0; // The index of the array we are at
@@ -37,13 +38,21 @@ public class moveZeroes {
             return;
         }
         for (int i : nums) { // For each of the numbers
-            if (i == 0) { // If a number is equal to zero
-                int valueAtEnd = nums[length - 1 - numberOfZeros]; // Get the number from the right edge of the array adjusted for zeros removed.
-                nums[index] = valueAtEnd;  // Switch to end value
-                nums[length - 1 - numberOfZeros] = 0; // Set the other side value to zero
-                numberOfZeros++; // Increase number of zeros
+            /*
+            *  Index 0 1 2 3 4
+            *  Input 0 1 2 3 4
+            Output   1 2 3 4 0 
+            So what we do here is move forward by one everything if there is a zero basically 
+             */
+            if (i == 0) {
+                numberOfZeros++;
+            } else {
+                nums[index - numberOfZeros] = i;
             }
             index++; // move the index forward
+        }
+        for (int j = 0; j < numberOfZeros; j++) {
+            nums[length - 1 - j] = 0;
         }
     }
 
