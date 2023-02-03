@@ -31,13 +31,22 @@ public class MaxProfitWithCoolDown {
     1 <= prices.length <= 5000
     0 <= prices[i] <= 100
      */
-    public static int maxProfit(int[] prices) {
-        int profit = 0;
-        int soldDay;
-        for(int i = prices.length -1 ; i > 0; i--)
-        {
-            if(prices[i] > prices[i-1])
-        }
-    }
+    // public static int maxProfit(int[] prices) {
+    //     boolean cooldown = false;
+    //     boolean sold = false;
+    //     boolean buy = false;
+    //     int price = Integer.MAX_VALUE;
+    //     int length = prices.length;
+    //     for (int i = 1; i < length; i++) {
+    //         if (prices[i] > prices[i - 1]) {
+    //             buy = true;
+    //         }
+    //         if (prices[i] > prices[i + 1]) {
+    //             sold = true;
+    //             cooldown = true;
+    //             buy = false;
+    //         }
+    //     }
+    // }
 
 }
