@@ -1,0 +1,203 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "java",
+			"name": "Launch minimumTotalTraingle",
+			"request": "launch",
+			"mainClass": "minimumTotalTraingle",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"name": "Java",
+			"type": "java",
+			"request": "launch",
+			"stopOnEntry": true,
+			"jdkPath": "${env:JAVA_HOME}/bin",
+			"cwd": "${fileDirname}",
+			"startupClass": "${fileBasenameNoExtension}",
+			"classpath": [".", "${fileDirname}"]
+		},
+		{
+			"name": "Java Console App",
+			"type": "java",
+			"request": "launch",
+			"stopOnEntry": true,
+			"jdkPath": "${env:JAVA_HOME}/bin",
+			"cwd": "${fileDirname}",
+			"startupClass": "${fileBasenameNoExtension}",
+			"classpath": [".", "${fileDirname}"],
+			"externalConsole": true
+		},
+		{
+			"type": "java",
+			"name": "Launch Current File",
+			"request": "launch",
+			"mainClass": "${file}"
+		},
+		{
+			"type": "java",
+			"name": "Launch ContainerWithMostWater",
+			"request": "launch",
+			"mainClass": "ContainerWithMostWater",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch MaxProfitWithCoolDown",
+			"request": "launch",
+			"mainClass": "MaxProfitWithCoolDown",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch MergeSortedLinkedLists",
+			"request": "launch",
+			"mainClass": "MergeSortedLinkedLists",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch PascalTriangle",
+			"request": "launch",
+			"mainClass": "PascalTriangle",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch PascalTriangle2",
+			"request": "launch",
+			"mainClass": "PascalTriangle2",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch PivotIndex",
+			"request": "launch",
+			"mainClass": "PivotIndex",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch RunningSumOfArray",
+			"request": "launch",
+			"mainClass": "RunningSumOfArray",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch addDigits",
+			"request": "launch",
+			"mainClass": "addDigits",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch alternateDigitSum",
+			"request": "launch",
+			"mainClass": "alternateDigitSum",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch applyOperations",
+			"request": "launch",
+			"mainClass": "applyOperations",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch getConcatenation",
+			"request": "launch",
+			"mainClass": "getConcatenation",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch isIsomorphic",
+			"request": "launch",
+			"mainClass": "isIsomorphic",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch isPalindrome",
+			"request": "launch",
+			"mainClass": "isPalindrome",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch isSubString",
+			"request": "launch",
+			"mainClass": "isSubString",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch kidsWithCandies",
+			"request": "launch",
+			"mainClass": "kidsWithCandies",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch maximumWealth",
+			"request": "launch",
+			"mainClass": "maximumWealth",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch minimumSum",
+			"request": "launch",
+			"mainClass": "minimumSum",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch mostWordsFound",
+			"request": "launch",
+			"mainClass": "mostWordsFound",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch moveZeroes",
+			"request": "launch",
+			"mainClass": "moveZeroes",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch numIdenticalPairs",
+			"request": "launch",
+			"mainClass": "numIdenticalPairs",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch removeDuplicates",
+			"request": "launch",
+			"mainClass": "removeDuplicates",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch removeElement",
+			"request": "launch",
+			"mainClass": "removeElement",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
+			"name": "Launch shuffle",
+			"request": "launch",
+			"mainClass": "shuffle",
+			"projectName": "Java-on-HP_40fa39e2"
+		}
+	]
+}
