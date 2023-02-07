@@ -6,6 +6,13 @@
 	"configurations": [
 		{
 			"type": "java",
+			"name": "Launch SearchInsert",
+			"request": "launch",
+			"mainClass": "SearchInsert",
+			"projectName": "Java-on-HP_40fa39e2"
+		},
+		{
+			"type": "java",
 			"name": "Launch minimumTotalTraingle",
 			"request": "launch",
 			"mainClass": "minimumTotalTraingle",
