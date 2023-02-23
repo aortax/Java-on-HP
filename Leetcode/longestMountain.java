@@ -39,29 +39,33 @@ public class longestMountain {
         int previous = 0;
         int next = 0;
         int length = 0;
-        int maxLength = 0;
-        for (int i = 1; i < arr.length; i++) {
+        int maxLength = length;
+        for (int i = 1; i < arr.length-1; i++) {
             current = arr[i];
             previous = arr[i - 1];
             next = arr[i + 1];
-            if(current > previous && next > current)
+
+            if((current > previous) && (next > current))
             {
                 length++;
             }
-            else if(current > next && previous > current)
+            else if((current > next) && (previous > current))
             {
                 length++;
             }
-            else if(current > next && current > previous)
+            else if((current > next) && (current > previous))
             {
                 length++;
             }
-            else if(next > current && length >0)
+            else if(((previous > current) && (i == arr.length-2)) || ((current > next) && (i == arr.length - 2)))
+            {
+                length++;
+            }
+            else
             {
                 length = 0;
             }
-            if(length > maxLength)
-            {
+            if (length > maxLength) {
                 maxLength = length;
             }
         }
@@ -69,6 +73,7 @@ public class longestMountain {
     }
 
     public static void main(String[] args) {
+        //               1  2  3  4  5
         //                  1, 2, 3
         //               1< 4< 7> 3> 2
         //               0  1  2  3  4
