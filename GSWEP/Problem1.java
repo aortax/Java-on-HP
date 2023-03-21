@@ -1,61 +1,66 @@
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.stream.Stream;
 
 public class Problem1 {
     /* Given a 2d array convert it into a 1d array and sort it  */
     public static void main(String[] args) {
-        // // We will first instantiate the array
-        // int[][] arr1 = { { 1, 4, 5 }, { 1, 3, 4 }, { 2, 6 } };
-        // int[][] arr2 = { { 1, 4, 5, 9, 2, 3, 0, -11, 23, 2293, 293 }, { 1, 3, 4, 2443, 99 },
-        //         { 2, 6, 44, 555555, 3332 } };
-
-        // // Make the  array list the first one will be for input 
-        // ArrayList<Integer> input = new ArrayList<>();
-
-        // for (int i = 0; i < arr1.length; i++) {
-        //     for (int j = 0; j < arr1[i].length; j++) {
-        //         input.add(arr1[i][j]);
-        //     }
-        // }
-        // Collections.sort(input);
-        // System.out.println(input);
+        // We will first instantiate the array
 
         int[][] arr1 = { { 1, 4, 5 }, { 1, 3, 4 }, { 2, 6 } };
         int lengthOfList = arr1.length;
-        int[] lengthOfSubLists = new int[lengthOfList];
-        for(int i = 0; i < lengthOfList; i ++)
-        {
-            lengthOfSubLists[i] = arr1[1].length;
+
+        int[][] arr2 = { { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, { 1, 2, 3, 4, 9, 99, 1234 },
+                { 9, 99, 230, 250, 987, 12304 } };
+
+        int maxInnerArrayLength = 0;
+        int[] innerArrayLength = new int[lengthOfList];
+        int totalLength = totalLengthOfList(arr1);
+
+        for (int i = 0; i < lengthOfList; i++) {
+            innerArrayLength[i] = arr1[i].length;
+            maxInnerArrayLength = maxInnerArrayLength > arr1[i].length ? maxInnerArrayLength : arr1[i].length;
         }
-        int counter1 = 0;
-        int counter2 = 0;
-        
-        // Find the total length of the 1D array
+        int mergedArray[] = merge(arr1, lengthOfList, maxInnerArrayLength, totalLength);
+        for(int i = 0; i < mergedArray.length; i++)
+        {
+            System.out.print(mergedArray[i] + " ");
+        }
+    }
+
+    public static int totalLengthOfList(int[][] arr1) {
+        int lengthOfList = arr1.length;
         int totalLength = 0;
-        for (int i = 0; i < arr1.length; i++) {
+        for (int i = 0; i < lengthOfList; i++) {
             totalLength += arr1[i].length;
         }
-        // // Initialize the 1D array
-        // int[] arr2 = new int[totalLength];
+        return totalLength;
+    }
 
-        // // Merge the nested arrays into the 1D array using a merge sort algorithm
-        // int[] pointers = new int[arr1.length]; // Pointers to keep track of the current index in each nested array
-        // for (int i = 0; i < totalLength; i++) {
-        //     int minValue = Integer.MAX_VALUE;
-        //     int minIndex = -1;
-        //     for (int j = 0; j < arr1.length; j++) {
-        //         if (pointers[j] < arr1[j].length && arr1[j][pointers[j]] < minValue) {
-        //             minValue = arr1[j][pointers[j]];
-        //             minIndex = j;
-        //         }
-        //     }
-        //     arr2[i] = minValue;
-        //     pointers[minIndex]++;
-        // }
+    public static int[] merge(int[][] arr, int K, int N, int totalLength) {
+        /** array to keep track of non considered positions in subarrays **/
+        int[] curPos = new int[K];
+        /** final merged array **/
+        int[] mergedArray = new int[totalLength];
+        int p = 0;
+        while (p < totalLength) {
+            int min = Integer.MAX_VALUE;
+            int minPos = -1;
+            /** search for least element **/
 
-        // // Print the resulting 1D array
-        // System.out.println(Arrays.toString(arr2));
+            for (int i = 0; i < K; i++) {
+                if (curPos[i] < N) {
+                    if (arr[i][curPos[i]] < min) {
+                        min = arr[i][curPos[i]];
+                        minPos = i;
+                    }
+                }
+            }
+            curPos[minPos]++;
+            mergedArray[p++] = min;
+        }
+        return mergedArray;
     }
 }
 
@@ -72,3 +77,35 @@ What can be done is that
 
 I will make a large number and set up a break
  */
+
+// Make the  array list the first one will be for input 
+// ArrayList<Integer> input = new ArrayList<>();
+
+// for (int i = 0; i < arr1.length; i++) {
+//     for (int j = 0; j < arr1[i].length; j++) {
+//         input.add(arr1[i][j]);
+//     }
+// }
+// Collections.sort(input);
+// System.out.println(input);
+// Initialize the 1D array
+// int[] arr2 = new int[totalLength];
+
+// Merge the nested arrays into the 1D array using a merge sort algorithm
+// int[] pointers = new int[arr1.length]; // Pointers to keep track of the current index in each nested array
+// for (int i = 0; i < totalLength; i++) {
+//     int minValue = Integer.MAX_VALUE;
+//     int minIndex = -1;
+//     for (int j = 0; j < arr1.length; j++) {
+//         if (pointers[j] < arr1[j].length && arr1[j][pointers[j]] < minValue) {
+//             minValue = arr1[j][pointers[j]];
+//             minIndex = j;
+//         }
+//     }
+//     arr2[i] = minValue;
+//     pointers[minIndex]++;
+// }
+
+// Print the resulting 1D array
+// System.out.println(Arrays.toString(arr2));
+// Find the total length of the 1D array
