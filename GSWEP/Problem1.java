@@ -4,29 +4,41 @@ import java.util.Collections;
 import java.util.stream.Stream;
 
 public class Problem1 {
-    /* Given a 2d array convert it into a 1d array and sort it  */
+    /* Given a 2d array convert it into a 1d array and sort it. The inner arrays are sorted in ascending oder. The arrays are not necessarily the same size  */
     public static void main(String[] args) {
         // We will first instantiate the array
 
         int[][] arr1 = { { 1, 4, 5 }, { 1, 3, 4 }, { 2, 6 } };
+        // int[][] arr1 = { { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, { 1, 2, 3, 4, 9, 99, 1234 },
+        //         { 9, 99, 230, 250, 987, 12304 } };
+
         int lengthOfList = arr1.length;
 
-        int[][] arr2 = { { 1, 2, 3, 4, 5, 6, 7, 8, 9 }, { 1, 2, 3, 4, 9, 99, 1234 },
-                { 9, 99, 230, 250, 987, 12304 } };
-
-        int maxInnerArrayLength = 0;
         int[] innerArrayLength = new int[lengthOfList];
+        innerArrayLength = inenrArrayLength(arr1, innerArrayLength);
         int totalLength = totalLengthOfList(arr1);
+        int maxInnerArrayLength = maxInnerArrayLength(arr1);
 
-        for (int i = 0; i < lengthOfList; i++) {
-            innerArrayLength[i] = arr1[i].length;
-            maxInnerArrayLength = maxInnerArrayLength > arr1[i].length ? maxInnerArrayLength : arr1[i].length;
-        }
         int mergedArray[] = merge(arr1, lengthOfList, maxInnerArrayLength, totalLength);
-        for(int i = 0; i < mergedArray.length; i++)
-        {
+        for (int i = 0; i < mergedArray.length; i++) {
             System.out.print(mergedArray[i] + " ");
         }
+    }
+
+    public static int[] inenrArrayLength(int[][] arr1, int[] innerArrayLength) {
+        for (int i = 0; i < arr1.length; i++) {
+            innerArrayLength[i] = arr1[i].length;
+        }
+        return innerArrayLength;
+    }
+
+    public static int maxInnerArrayLength(int[][] arr1) {
+        int maxInnerArrayLength = 0;
+        for (int i = 0; i < arr1.length; i++) {
+            maxInnerArrayLength = maxInnerArrayLength > arr1[i].length ? maxInnerArrayLength : arr1[i].length;
+        }
+        return maxInnerArrayLength;
+
     }
 
     public static int totalLengthOfList(int[][] arr1) {
